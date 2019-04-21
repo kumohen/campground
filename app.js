@@ -27,18 +27,7 @@ app.use(function(req,res,next){
 app.get("/",function(req,res){
     res.render("landing");
 });
-// Campground.create({
-//     name:"picture1",
-//     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeXiGIGSTtzRDT1N_UWayDDhcYNdoMpidV_7lgMhBo8zdbqXQ"
-// },function(err,campground){
-//     if(err){
-//         console.log(err);
-//     }else {
-//         console.log(campground);
-//         console.log("new campground created");
-//     }
-// })
-//seedDB();
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -48,9 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-// app.use(function(req,res,next){
-//     res.locals.currentUser = req.user;
-// });
+
 passport.use(new LocalStrategy(User.authenticate()));
 
 
@@ -72,19 +59,7 @@ app.use("/",commentsRoutes);
 app.use("/",authRoutes);
 
 
-// var campgrounds = [
-//     {name:"picture1",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeXiGIGSTtzRDT1N_UWayDDhcYNdoMpidV_7lgMhBo8zdbqXQ"},
-//     {name:"picture2",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1_AEs_Ei94hHoDfG-SUJLmIMpSvQhoMi_9mab42GFdOAQnsh"},
-//     {name:"picture3",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcrkTylq_NcR1xOsclrGiDsbEPFpRFlLK_UxpB4zuF9O3Uvwu5"},
-//     {name:"picture1",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeXiGIGSTtzRDT1N_UWayDDhcYNdoMpidV_7lgMhBo8zdbqXQ"},
-//     {name:"picture2",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1_AEs_Ei94hHoDfG-SUJLmIMpSvQhoMi_9mab42GFdOAQnsh"},
-//     {name:"picture3",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcrkTylq_NcR1xOsclrGiDsbEPFpRFlLK_UxpB4zuF9O3Uvwu5"}
-//   ];
 
-/// campgrounds tutorials
-
-
-//auth routes
 
 const port = process.env.PORT || 3000 ;
 
