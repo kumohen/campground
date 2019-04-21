@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<div style="width:50%;margin-left:50px; " >
+  <h1>Add New Campground</h1>
+  <form action="/campgrounds/<%=campground._id %>/comments" method="post">
+    <div class="form-group">
+            <label for="pwd">Text:</label>
+            <input type="text" class="form-control" name="text">
+
+           
+                
+           <button class="btn btn-primary">Comment</button> 
+    </div>
+    
+</form>
+
+
+  <a href="/campgrounds">GO BACK </a>
+  <% include ../partials/footer %>
